@@ -4,13 +4,9 @@ class Park < ActiveRecord::Base
     has_many :users, through: :reviews
 
 
-def self.all_print_parks
-    self.all.map { |park| puts park.name }
-    
-end
-
-
-
+    def self.all_print_parks
+        self.all.map { |park| puts "#{park.id}. #{park.name}"}
+    end
 
 
 end
